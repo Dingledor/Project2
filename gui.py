@@ -130,6 +130,7 @@ class WindowText:
         self.window.bind("<Configure>", self.resize)
         self.window.bind("<FocusOut>", self.focus_out)
         self.label_validate = Label(self.window, textvariable=self.text, font='Arial')
+        self.label_validate.place(x=0, y=0)
         self.window.title('Text')
         self.window.protocol("WM_DELETE_WINDOW", lambda: logic.draw_text(self.window, self.text.get(), self.fontsize))
         self.entry = Entry(self.window, bg=('white' if logic.color != 'white' else 'black'), fg=logic.color,
